@@ -1,0 +1,14 @@
+# Tối ưu từ khóa khi tìm kiếm tài liệu kỹ thuật
+## Chỉ ra tại sao truy vấn trên là "Bad Query" (gây nhiễu).
+- Do sinh viên đã sử dụng các từ ngữ cảm thán như `Thầy ơi cho em xin` và `với ạ` trong từ khóa `thầy ơi cho em xin tài liệu học html cơ bản của trang mozilla với ạ`
+- Thanh tìm kiếm Google không hiểu được các từ ngữ xã giao này và sẽ tính chúng là các từ khóa nhiễu, làm loãng kết quả trả về, khiến người dùng nhận hàng loạt bài viết rác, diễn đàn không liên quan hoặc trang web thương mại trá hình.
+## Viết lại truy vấn sử dụng toán tử **site:** để khoanh vùng tên miền uy tín và toán tử **-** để loại bỏ các từ khóa quảng cáo/rác.
+`thầy ơi cho em xin tài liệu học html cơ bản của trang mozilla với ạ`
+-> `site:developer.mozilla.org HTML tutorial -ads -buy`
+## Giải thích ý nghĩa của việc sử dụng các toán tử này trong việc tiết kiệm thời gian lọc tin.
+-   **Toán tử `site:` (Khoanh vùng tên miền uy tín):**    
+    -   **Ý nghĩa kỹ thuật:** Buộc bộ máy tìm kiếm chỉ quét và trả về kết quả nằm độc quyền bên trong tên miền chính thống được chỉ định (ví dụ:  `developer.mozilla.org`).
+    -   **Hiệu quả tiết kiệm thời gian:** Giúp lập trình viên bỏ qua hoàn toàn hàng triệu kết quả trôi nổi, kém chất lượng hoặc các trang web giả mạo trên Internet, đưa thẳng người dùng đến nguồn tài liệu gốc chuẩn xác nhất ngay từ lần tìm kiếm đầu tiên.
+-   **Toán tử `-` (Loại trừ từ khóa nhiễu/quảng cáo):**
+    -   **Ý nghĩa kỹ thuật:** Lọc sạch và loại bỏ toàn bộ các trang web chứa các từ khóa không mong muốn đi kèm sau dấu trừ (như `-quảng cáo`,  `-mua bán`).
+    -   **Hiệu quả tiết kiệm thời gian:** Giúp loại bỏ triệt để các thông tin rác, các bài đăng thương mại hay dịch vụ spam, từ đó thu hẹp tối đa không gian kết quả và giúp người học tập trung hoàn toàn vào nội dung kỹ thuật cần nghiên cứu mà không bị phân tâm.

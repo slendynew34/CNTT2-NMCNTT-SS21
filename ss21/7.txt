@@ -1,0 +1,22 @@
+# Chuẩn Hóa Cú Pháp Googling Sửa Lỗi Phần Mềm Điều Khiển Kiosk Trạm Sạc
+## **Phần 1: Phân tích sai lầm trong tư duy tìm kiếm**
+### **1. Phân tích vì sao Query 1 của bạn thực tập sinh là một 'Bad Query' điển hình? Thuật toán máy tìm kiếm bị nhiễu loạn như thế nào trước các câu văn nói dài dòng?**
+-   **Lý do là 'Bad Query':**    
+    -   Truy vấn chứa các từ ngữ khẩu ngữ, giao tiếp thông thường và cảm thán (ví dụ:  _"thầy ơi"_,  _"cho em xin"_,  _"của em"_,  _"bị lỗi không mở được vậy ạ"_).
+    -   Máy tìm kiếm Google không hiểu được văn phong xã giao hay cảm xúc của con người. Những từ này hoàn toàn không mang giá trị kỹ thuật để định danh sự cố.
+-   **Sự nhiễu loạn của thuật toán:**
+    -   Thuật toán máy tìm kiếm sẽ cố gắng đối chiếu từng từ trong câu văn nói đó với cơ sở dữ liệu. Do có quá nhiều từ khóa nhiễu, thuật toán bị loãng độ chính xác, dẫn đến việc trả về hàng triệu kết quả rác như các bài đăng diễn đàn tâm sự chung chung, blog hướng dẫn không chuyên hoặc các trang web thương mại trá hình không liên quan gì đến lỗi kỹ thuật thực tế của phần mềm.
+### **2. Chỉ ra hiểm họa an ninh thông tin nghiêm trọng nếu nhân viên kỹ thuật click vào các kết quả của Query 3 để sửa máy trạm sạc của công ty.**
+-   **Nguy cơ lây nhiễm mã độc (Malware/Trojan):** Các trang web xuất hiện từ truy vấn tìm kiếm phần mềm "crack" hoặc bẻ khóa thường gắn liền với các liên kết tải xuống chứa mã độc hại, Trojan hoặc phần mềm gián điệp.
+-   **Đánh cắp dữ liệu và kiểm soát hệ thống:** Nếu cài đặt các công cụ trôi nổi này lên máy trạm Kiosk của trạm sạc, hệ thống quản lý điều khiển xe điện có thể bị kẻ xấu chiếm quyền điều khiển từ xa, làm tê liệt toàn bộ mạng lưới vận hành của trạm sạc.
+-   **Lộ lọt thông tin nhạy cảm:** Nguy cơ rò rỉ dữ liệu cấu hình kết nối nội bộ, khóa API hoặc thông tin định danh hệ thống thanh toán của doanh nghiệp ra ngoài Internet.
+## **Phần 2: Chuẩn hóa Cú pháp Tìm kiếm Chuyên nghiệp**
+### **3. Bóc tách thông báo lỗi trên màn hình Kiosk**
+_(Bảng thông tin đã được trích xuất sẵn theo yêu cầu đề bài)_
+### **4. Xây dựng 03 câu lệnh tìm kiếm Google chuẩn kỹ sư**
+-   **Cú pháp 1 (Tìm trên diễn đàn Microsoft Community cho Windows 11, loại bỏ Windows 7 và 8):**
+`site:microsoft.com "VoltCharge Controller" "Access is denied" "bind OCPP port" Windows 11 -win7 -win8`
+-   **Cú pháp 2 (Tìm tài liệu đặc tả lỗi phân quyền cổng OCPP từ trang chủ Open Charge Alliance):**
+`site:openchargealliance.org "Access is denied" "bind OCPP port"`
+-   **Cú pháp 3 (Tìm hướng dẫn sửa lỗi trên StackOverflow sạch bóng từ khóa quảng cáo và crack):**
+`site:stackoverflow.com "VoltCharge Controller" "Access is denied" "bind OCPP port" -quangcao -crack -download -free`

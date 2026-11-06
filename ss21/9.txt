@@ -1,0 +1,39 @@
+# Xây Dựng Prompt 3 Thành Phần Giải Mã Thông Báo Lỗi Trạm Sạc Cùng Trợ Lý AI
+## **Phần 1: Thiết kế Prompt 3 Thành phần Chuẩn hóa**
+### **1. Phân tích nguyên nhân vì sao câu hỏi _"AI ơi phần mềm trạm sạc của tôi bị hỏng rồi"_ lại khiến AI đưa ra câu trả lời sai lệch (hiện tượng AI Hallucination)?**
+-   **Thiếu hụt dữ kiện kỹ thuật (Lack of Context):** Câu hỏi quá chung chung, không chỉ rõ phần mềm gì, chạy trên hệ điều hành nào và không có đoạn mã lỗi (Error Log) thực tế.
+-   **AI phải tự đoán mò (Guesswork):** Do thiếu thông tin đầu vào, mô hình AI buộc phải phỏng đoán dựa trên xác suất từ khóa thông thường ("trạm sạc hỏng" tương đương với thiết bị phần cứng hỏng).
+-   **Hiện tượng ảo giác AI (Hallucination):** AI tự bịa ra các giải pháp can thiệp phần cứng ngoài đời thực (như khuyên tháo vỏ sắt, kiểm tra dây điện), dẫn đến câu trả lời sai lệch hoàn toàn so với bản chất thực tế là lỗi phân quyền phần mềm.
+### **2. Soạn thảo một câu Prompt 3 Thành phần hoàn chỉnh, chuyên nghiệp**
+```
+[Context]
+Tôi là kỹ thuật viên vận hành hệ thống trạm sạc xe điện, đang chạy phần mềm VoltCharge Controller trên hệ điều hành Windows 11.
+
+[Raw Error]
+[TERMINAL ERROR LOG - VOLTCHARGE CHARGER #04] 2026-09-21 21:15:30 [FATAL] ControllerDaemon failed to start. System.UnauthorizedAccessException: Access to the path 'C:\Program Files\VoltCharge\data\session.log' is denied. Process terminated with exit code 5 (0x00000005).
+
+[Instruction]
+Hãy đóng vai chuyên gia hỗ trợ kỹ thuật:
+1. Giải thích nguyên nhân gốc rễ của lỗi này bằng tiếng Việt đơn giản, dễ hiểu cho người mới.
+2. Hướng dẫn chi tiết 3 bước xử lý cụ thể trên Windows 11 để khắc phục lỗi phân quyền và chạy ứng dụng với quyền Quản trị viên.
+```
+## **Phần 2: Giải mã Lỗi & Kịch bản Khắc phục**
+### **3. Bản dịch và giải thích nguyên nhân gốc rễ**
+-   **Bản dịch:**  _Lỗi ngoại lệ truy cập không được phép: Từ chối quyền truy cập vào đường dẫn tệp tin 'C:\Program Files\VoltCharge\data\session.log'. Tiến trình đã bị dừng với mã thoát 5._
+-   **Giải thích bằng tiếng Việt đời thường:** Giống như việc bạn muốn viết nhật ký vào một cuốn sổ đặt trong tủ khóa của cơ quan nhưng lại không có chìa khóa hay quyền mở tủ.
+-   **Nguyên nhân gốc rễ:** Thư mục `C:\Program Files\` là khu vực bảo mật của hệ điều hành Windows. Phần mềm cố gắng ghi tệp tin nhật ký phiên làm việc (`session.log`) vào thư mục này nhưng tiến trình đang chạy ở mức người dùng thông thường, bị Windows chặn lại vì không đủ quyền hạn (Administrator).
+### **4. 3 bước xử lý cụ thể tại chỗ trên Windows 11**
+1.  **Bước 1: Chạy ứng dụng với quyền Quản trị viên (Run as Administrator):**
+    -   Nhấp chuột phải vào biểu tượng khởi chạy phần mềm VoltCharge trên màn hình hoặc tệp thực thi chính.
+   -   Chọn **Run as administrator** để cấp toàn quyền hệ thống cho tiến trình khởi động.
+2.  **Bước 2: Mở quyền phân quyền ghi file cho thư mục `data`:**
+    -   Truy cập vào đường dẫn `C:\Program Files\VoltCharge\`.
+    -   Nhấp chuột phải vào thư mục `data`, chọn **Properties** ➔ Chuyển sang thẻ **Security** ➔ Bấm nút **Edit**.
+3.  **Bước 3: Xác nhận quyền Full Control:**
+    -   Chọn tài khoản/nhóm người dùng đang vận hành (Users hoặc Authenticated Users).
+ -   Tích chọn mục **Full Control** (hoặc **Modify**) trong cột _Allow_ để cho phép phần mềm tự do đọc/ghi tệp tin nhật ký vào thư mục này, sau đó bấm **Apply** và **OK** để lưu lại.
+### **5. Xử lý bẫy an ninh với chuỗi mã bí mật (API Key)**
+-   **Cách xử lý:** Kỹ thuật viên **phải xóa bỏ hoặc thay thế** chuỗi mã nhạy cảm (ví dụ đổi thành `API_KEY: [REDACTED]` hoặc `API_KEY: your_api_key_here`) trước khi dán vào khung chat của ChatGPT hay Gemini.
+-   **Giải thích lý do:**
+    -   Các nền tảng AI công cộng có thể lưu trữ lịch sử hội thoại hoặc sử dụng dữ liệu đầu vào để huấn luyện mô hình.
+    -   Việc để lộ các chuỗi khóa bí mật (API Keys, Token, mật khẩu) lên môi trường mạng công cộng sẽ tạo ra lỗ hổng bảo mật chí mạng, tạo cơ hội cho kẻ xấu đánh cắp và chiếm quyền truy cập vào hệ thống máy chủ quản lý trạm sạc của công ty.
